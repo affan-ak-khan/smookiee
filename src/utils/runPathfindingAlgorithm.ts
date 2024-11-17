@@ -16,10 +16,10 @@ export const runPathfindingAlgorithm = ({
   endTile: TileType;
 }) => {
   switch (algorithm) {
-    case "BFS":
-      return bfs(grid, startTile, endTile);
-    case "DFS":
-      return dfs(grid, startTile, endTile);
+    // case "BFS":
+    //   return bfs(grid, startTile, endTile);
+    // case "DFS":
+    //   return dfs(grid, startTile, endTile);
     case "DIJKSTRA":
       return dijkstra(grid, startTile, endTile);
     case "A_STAR":

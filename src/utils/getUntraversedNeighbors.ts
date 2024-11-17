@@ -1,3 +1,4 @@
+// This is path other then the select tile
 import { MAX_COLS, MAX_ROWS } from "./constants";
 import { GridType, TileType } from "./types";
 

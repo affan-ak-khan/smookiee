@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MouseEventHandler } from "react";
 import { BsFillPlayFill } from "react-icons/bs";
 import { GrPowerReset } from "react-icons/gr";
@@ -10,27 +10,28 @@ export function PlayButton({
 }: {
   isDisabled: boolean;
   isGraphVisualized: boolean;
-  handlerRunVisualizer: MouseEventHandler<HTMLButtonElement>;
+  handlerRunVisualizer: (endRow: number, endCol: number) => void;
 }) {
+  useEffect(() => {}, [handlerRunVisualizer]);
   const [endRow, setEndRow] = useState(12)
   const [endCol, setEndCol] = useState(13)
   const handleSubmit = () => {
-    handlerRunVisualizer(endRow, endCol)
-    }
+ handlerRunVisualizer(endRow, endCol);
+  };
   return (
     <div>
-      <div className="flex space-x-2">
-        <input
-        onChange={(e) => setEndRow(parseInt(e.target.value))}
-          type="text"
+     <div className="flex space-x-2"> 
+   <input 
+      onChange={(e) => setEndRow(parseInt(e.target.value))}
+     type="text"
           placeholder="End Point Row"
-          className="p-2 border rounded"
+          className="p-2 border text-black rounded"
         />
         <input
         onChange={(e) => setEndCol(parseInt(e.target.value))}
           type="text"
           placeholder="End Point Column"
-          className="p-2 border rounded"
+          className="p-2 border text-black rounded"
         />
       </div>
       <button
@@ -47,3 +48,5 @@ export function PlayButton({
     </div>
   );
 }
+
+
